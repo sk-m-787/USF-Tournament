@@ -1,0 +1,174 @@
+:root {
+  --bg: #0a0a0f;
+  --bg2: #10101a;
+  --bg3: #16162a;
+  --card: #1a1a2e;
+  --card2: #1f1f38;
+  --accent: #e63946;
+  --accent2: #ff6b6b;
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --bronze: #cd7f32;
+  --purple: #7c3aed;
+  --purple2: #a855f7;
+  --cyan: #06b6d4;
+  --green: #10b981;
+  --text: #f0f0f5;
+  --text2: #a0a0b5;
+  --border: rgba(255,255,255,0.08);
+  --glow: rgba(230,57,70,0.3);
+  --glow2: rgba(124,58,237,0.2);
+}
+
+[data-theme="light"] {
+  --bg: #f0f0f8;
+  --bg2: #e8e8f0;
+  --bg3: #dcdcee;
+  --card: #ffffff;
+  --card2: #f5f5ff;
+  --text: #0a0a1f;
+  --text2: #4a4a6a;
+  --border: rgba(0,0,0,0.1);
+  --glow: rgba(230,57,70,0.15);
+  --glow2: rgba(124,58,237,0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ── SECTION ── */
+.section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.section-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: 3px;
+  line-height: 1;
+  color: var(--text);
+}
+.section-line {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* ── BTN ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 30px rgba(230,57,70,0.3);
+}
+.btn-primary:hover { background: var(--accent2); box-shadow: 0 0 50px rgba(230,57,70,0.5); transform: translateY(-2px); }
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--purple2); color: var(--purple2); transform: translateY(-2px); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .prize-breakdown { grid-template-columns: 1fr 1fr; }
+  .player-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .finale-tiers { flex-direction: column; }
+  .final-matchup { gap: 10px; }
+  .reg-card { padding: 28px 20px; }
+  .info-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .countdown-unit { min-width: 58px; padding: 10px 12px; }
+  .countdown-num { font-size: 1.4rem; }
+}
+@media (max-width: 480px) {
+  .tier-tabs, .standings-tabs { flex-direction: column; align-items: center; }
+  .hero-meta { gap: 12px; }
+  .hero-divider { display: none; }
+  .countdown { gap: 8px; }
+}
