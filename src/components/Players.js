@@ -1,32 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const TIER1 = [
-  { init: 'MR', rank: '#1 · T1', name: 'MR_A404' },
-  { init: 'GO', rank: '#2 · T1', name: 'Gorilla' },
-  { init: 'AR', rank: '#3 · T1', name: 'Aragorn' },
-  { init: 'AK', rank: '#4 · T1', name: 'Akaza' },
-  { init: 'LA', rank: '#5 · T1', name: 'LAG' },
-  { init: 'HA', rank: '#6 · T1', name: 'Habibi' },
-  { init: 'DD', rank: '#7 · T1', name: 'Dr.Death' },
-  { init: 'BL', rank: '#8 · T1', name: 'Blitzbot' },
-  { init: 'IG', rank: '#9 · T1', name: 'Igris' },
+  { init: '01', name: 'PLayer A' },
+  { init: '02', name: 'Player B' },
+  { init: '03', name: 'Player C' },
+  { init: '04', name: 'Player D' },
 ];
 
 const TIER2 = [
-  { init: 'DR', rank: '#1 · T2', name: 'Draken' },
-  { init: 'NE', rank: '#2 · T2', name: 'Neo' },
-  { init: 'CA', rank: '#3 · T2', name: 'Cake' },
-  { init: 'LO', rank: '#4 · T2', name: 'LOKI' },
-  { init: 'RU', rank: '#5 · T2', name: 'RUPSHA' },
-  { init: 'BL', rank: '#6 · T2', name: 'BLE' },
-  { init: 'PR', rank: '#7 · T2', name: 'PRONEX' },
-  { init: 'IK', rank: '#8 · T2', name: 'Ikram' },
-  { init: 'MD', rank: '#9 · T2', name: 'MD' },
-  { init: '36', rank: '#10 · T2', name: '360' },
-  { init: 'ZA', rank: '#11 · T2', name: 'Zanza' },
-  { init: 'AB', rank: '#12 · T2', name: 'ABID' },
-  { init: 'UD', rank: '#13 · T2', name: 'Udoy' },
-  { init: 'VO', rank: '#14 · T2', name: 'Vortex' },
+  { init: '01', name: 'PLayer O' },
+  { init: '02', name: 'Player P' },
+  { init: '03', name: 'Player Q' },
+  { init: '04', name: 'Player R' },
 ];
 
 export default function Players() {
@@ -89,7 +74,7 @@ export default function Players() {
   );
 }
 
-function PlayerCard({ init, rank, name, tier }) {
+function PlayerCard({ init, name, tier }) {
   const [hov, setHov] = React.useState(false);
   const isT1 = tier === 't1';
   const avatarBg = isT1 ? 'rgba(255,215,0,0.15)' : 'rgba(192,192,192,0.15)';
@@ -106,7 +91,6 @@ function PlayerCard({ init, rank, name, tier }) {
         {init}
       </div>
       <div>
-        <div style={{ fontSize: '0.65rem', letterSpacing: 1, textTransform: 'uppercase', color: 'var(--text2)' }}>{rank}</div>
         <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text)' }}>{name}</div>
       </div>
     </div>

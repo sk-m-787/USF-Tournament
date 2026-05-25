@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // ─── সেট করুন আপনার deadline এখানে ───
 // Format: 'YYYY-MM-DDTHH:MM:SS'  (24-hour, local time)
-const REGISTRATION_DEADLINE = '2025-07-02T23:59:59';
+const REGISTRATION_DEADLINE = '2026-06-07T17:59:59';
 
 function pad(n) {
   return String(n).padStart(2, '0');

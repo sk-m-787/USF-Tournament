@@ -1,25 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const T1_ROWS = [
-  { rank: 1, player: 'U2F¿ARAGORN',  w: 3, d: 1, l: 0, pts: '07' },
-  { rank: 2, player: 'U2F¿MR_A04',   w: 3, d: 0, l: 2, pts: '06' },
-  { rank: 3, player: 'U2F¿BLITZBOT', w: 3, d: 0, l: 1, pts: '06' },
-  { rank: 4, player: 'U2F¿NERFF',    w: 3, d: 0, l: 1, pts: '06' },
-  { rank: 5, player: 'U2F¿IGRIS',    w: 2, d: 1, l: 1, pts: '05' },
-  { rank: 6, player: 'U2F¿GORILLA',  w: 2, d: 0, l: 3, pts: '04' },
-  { rank: 7, player: 'U2F¿DR.DEATH', w: 1, d: 0, l: 3, pts: '02' },
-  { rank: 8, player: 'U2F¿DRAKEN',   w: 1, d: 0, l: 2, pts: '02' },
-  { rank: 9, player: 'U2F¿AKAZA',    w: 0, d: 0, l: 4, pts: '00' },
+  { rank: 1, player: 'Player A',  w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 2, player: 'Player B',   w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 3, player: 'Player C', w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 4, player: 'Player D',    w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 5, player: 'Player E',    w: 0, d: 0, l: 0, rd: 0, pts: '00' },
 ];
 
 const T2_ROWS = [
-  { rank: 1, player: 'U2F¿HABIBI',    w: 4, d: 0, l: 0, pts: '08' },
-  { rank: 2, player: 'U2F¿^VORTEX^',  w: 3, d: 0, l: 1, pts: '06' },
-  { rank: 3, player: 'U2F¿ZANZA',     w: 2, d: 0, l: 2, pts: '04' },
-  { rank: 4, player: 'U2F¿PRONEX',    w: 2, d: 0, l: 1, pts: '04' },
-  { rank: 5, player: 'U2F¿MD',        w: 1, d: 0, l: 4, pts: '02' },
-  { rank: 6, player: 'U2F¿MIAOW',     w: 1, d: 0, l: 3, pts: '02' },
-  { rank: 7, player: 'U2F¿LoKi',      w: 0, d: 0, l: 4, pts: '00' },
+  { rank: 1, player: 'Player O',    w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 2, player: 'Player P',  w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 3, player: 'Player Q',     w: 0, d: 0, l: 0, rd: 0, pts: '00' },
+  { rank: 4, player: 'Player R',    w: 0, d: 0, l: 0, rd: 0, pts: '00' },
 ];
 
 const rankColor = (r) => r === 1 ? 'var(--gold)' : r === 2 ? 'var(--silver)' : r === 3 ? 'var(--bronze)' : 'var(--text)';
@@ -52,7 +45,7 @@ export default function Standings() {
       <table style={tableStyle}>
         <thead>
           <tr>
-            {['#','Player','W','D','L','Pts'].map(h => (
+            {['#','Player','W','D','L','RD','Pts'].map(h => (
               <th key={h} style={thStyle}>{h}</th>
             ))}
           </tr>
@@ -69,6 +62,7 @@ export default function Standings() {
               <td style={{ ...tdStyle, color: rankColor(row.rank) }}>{row.w}</td>
               <td style={{ ...tdStyle, color: rankColor(row.rank) }}>{row.d}</td>
               <td style={{ ...tdStyle, color: rankColor(row.rank) }}>{row.l}</td>
+              <td style={{ ...tdStyle, color: rankColor(row.rank) }}>{row.rd}</td>
               <td style={tdStyle}>
                 <span style={ptsBadgeStyle}>{row.pts}</span>
               </td>

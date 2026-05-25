@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <footer style={footerStyle}>
       <div style={logoStyle}>USF</div>
-      <div style={textStyle}>Unity Strike Force · "DO | 1v1 | DIE" Season 2.0</div>
-      <div style={textStyle}>© 2025 USF Clan. All rights reserved.</div>
+      <div style={textStyle}>Unity Strike Force · "ALLIES TO RIVALS" Season 2026</div>
+      <div style={textStyle}>© 2026 USF Clan. All rights reserved.</div>
     </footer>
   );
 }

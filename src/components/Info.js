@@ -20,51 +20,56 @@ export default function Info() {
 
       {/* PRIZE BANNER */}
       <div style={prizeBannerStyle}>
-        <div style={prizeTotalStyle}>960 CP</div>
+        <div style={prizeTotalStyle}>2500 BDT</div>
         <div style={prizeSubStyle}>Total Prize Pool</div>
         <div style={prizeBreakdownStyle}>
-          <PrizeItem pos="🥇" name="1st Runner Up (Each Tier)" amt="400 + 400 CP" color="var(--gold)" />
-          <PrizeItem pos="🥈" name="2nd Runner Up (Each Tier)" amt="80 + 80 CP" color="var(--silver)" />
+          <PrizeItem pos="🥇" name="1st Runner Up (Each Tier)" amt="850 BDT" color="var(--gold)" />
+          <PrizeItem pos="🥈" name="2nd Runner Up (Each Tier)" amt="400 BDT" color="var(--silver)" />
         </div>
       </div>
 
+
+
       {/* INFO GRID */}
       <div style={infoGridStyle}>
-        <InfoCard icon="📅" label="Starting Date" value="03 August 2025" />
-        <InfoCard icon="🎯" label="Game Mode" value="TDM — Shipment" />
+        <InfoCard icon="📅" label="Starting Date" value="08 June 2026" valueColor="var(--green)"/>
+        <InfoCard icon="🎯" label="Game Mode" value="Gunfight" valueColor="var(--green)"/>
         <InfoCard icon="💰" label="Entry Fee" value="FREE" valueColor="var(--green)" big />
         <InfoCard icon="🎮" label="Total Slots" value="16" big />
-        <InfoCard icon="🎖️" label="Format" value="1v1 Best of 5" />
-        <InfoCard icon="🏅" label="Score Limit" value="20 Kills" big />
-        <InfoCard icon="⏱️" label="Time Limit" value="250 Seconds" />
-        <InfoCard icon="🔖" label="Sponsored By" value="USF Clan" />
+        <InfoCard icon="🖇️" label="Tier Categories" value="2" valueColor="var(--green)" big />
+        <InfoCard icon="🏅" label="Rewards Via" value="Bkash" valueColor="var(--green)" big />
+        {/* <InfoCard icon="⏱️" label="Time Limit" value="250 Seconds" /> */}
+        <InfoCard icon="🔖" label="Sponsored By" value="USF" valueColor="var(--gold)" big />
         <InfoCard icon="👥" label="Eligibility" value="Clan Members Only" />
+
+
+
 
         {/* GRAND FINALE */}
         <div style={finaleCardStyle}>
           <div style={{ fontSize: '1.8rem', marginBottom: 8 }}>🏆</div>
           <div style={finaleTitleStyle}>⚔️ GRAND FINALE</div>
           <div style={{ color: 'var(--text2)', fontSize: '0.82rem', letterSpacing: 1, marginBottom: 20 }}>
-            📅 09 August 2025 &nbsp;·&nbsp; 11:00 PM &nbsp;·&nbsp; Best of 5
+            📅 13 June 2026 &nbsp;·&nbsp; 10:00 PM &nbsp;·&nbsp; Best of 5 TDM
           </div>
           <div style={finaleTiersStyle}>
             <div style={finaleTierBlockStyle}>
               <div style={{ ...finaleTierLabelStyle, color: 'var(--gold)' }}>🥇 Tier 01 · Elite Final — 10:30 PM</div>
               <div style={finaleMatchupRowStyle}>
-                <span>U2F¿BLITZBOT</span>
+                <span>T1 · #1</span>
                 <span style={finaleVsStyle}>VS</span>
-                <span>U2F¿NERFF</span>
+                <span>T1 · #2</span>
               </div>
-              <div style={finaleTimeStyle}>🎯 Top 2 from Tier 01 face off</div>
+              <div style={finaleTimeStyle}>🎯 Top two players from Tier 01 standings</div>
             </div>
             <div style={finaleTierBlockStyle}>
               <div style={{ ...finaleTierLabelStyle, color: 'var(--silver)' }}>🥈 Tier 02 · Rising Final — 11:00 PM</div>
               <div style={finaleMatchupRowStyle}>
-                <span>U2F¿ZANZA</span>
+                <span>T2 · #1</span>
                 <span style={finaleVsStyle}>VS</span>
-                <span>U2F¿HABIBI</span>
+                <span>T2 · #2</span>
               </div>
-              <div style={finaleTimeStyle}>🎯 Top 2 from Tier 02 face off</div>
+              <div style={finaleTimeStyle}>🎯 Top two players from Tier 02 standings</div>
             </div>
           </div>
         </div>
